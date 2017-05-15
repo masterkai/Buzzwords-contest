@@ -1,0 +1,34 @@
+.btn {
+  background: $btn;
+  border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 40px;
+  border: 0;
+  color: #faf6fa;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 3;
+  overflow: hidden;
+  padding: 0 2.5em;
+  position: relative;
+}
+.btn:active, .btn:focus, .btn:hover {
+  background: $btn;
+  color: #fff;
+}
+.btn--b {
+  background: #de3a95;
+  line-height: 2.5;
+}
+.btn--b:active, .btn--b:focus, .btn--b:hover {
+  background: #c4217b;
+  color: #fff;
+}
+.btn[disabled] {
+  opacity: 0.4;
+}
+.btn[disabled]:active, .btn[disabled]:focus, .btn[disabled]:hover {
+  background: darken($btn,30%);
+  color: #fff;
+  cursor: pointer;
+}

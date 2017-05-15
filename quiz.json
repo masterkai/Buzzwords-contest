@@ -1,0 +1,47 @@
+[
+  {
+    "question": "題目一：網紅",
+    "answer": [
+      "Internet celebrity",
+      "Internet red",
+      "interred"
+    ],
+    "correct": 0
+  },
+  {
+    "question": "題目二：意見領袖",
+    "answer": [
+      "opinion leader",
+      "speaking leader",
+      "talking man"
+    ],
+    "correct": 0
+  },
+  {
+    "question": "題目三：引戰文",
+    "answer": [
+      "troll",
+      "fire box",
+      "angry article"
+    ],
+    "correct": 0
+  },
+  {
+    "question": "題目四：原PO",
+    "answer": [
+      "original poster",
+      "real writer",
+      "originaler"
+    ],
+    "correct": 0
+  },
+  {
+    "question": "題目五：鄉民",
+    "answer": [
+      "netizen",
+      "web citizen",
+      "internet man"
+    ],
+    "correct": 0
+  }
+]

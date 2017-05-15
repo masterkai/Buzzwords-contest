@@ -1,0 +1,69 @@
+.card {
+  padding: 1.25em;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .card {
+    border-radius: 6px;
+  }
+}
+.card--a {
+  background: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+.card--b {
+  border: 2px solid #ddd;
+}
+.card--l {
+  padding: 1.25em;
+}
+@media screen and (min-width: 768px) {
+  .card--l {
+    padding: 2.5em;
+  }
+}
+.has-answer {
+  list-style-type: none;
+  margin: 0;
+  margin-bottom: 1.25em;
+  padding: 0;
+}
+.answer {
+  font-weight: 700;
+}
+.answer-link {
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  color: #333;
+  display: block;
+  font-size: 90%;
+  padding: 0.625em;
+  padding-left: 2.5em;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .answer-link {
+    font-size: 100%;
+  }
+}
+.answer-link:active, .answer-link:focus, .answer-link:hover, .answer-link.is-selected {
+  border-color: $btn;
+  color: #333;
+}
+.answer-link.is-selected::before {
+  background: $btn;
+  color: #333;
+}
+.answer-link::before {
+  background: #ddd;
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 20px;
+  left: 0.625em;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 20px;
+}

@@ -1,0 +1,14 @@
+.bg{
+  @media (max-width: 500px) {
+    background-image: url(bg_small.svg);
+    height: 600px;
+  }
+  background-image: url(bg.svg);
+  background-repeat: no-repeat;
+  -webkit-background-size:contain;
+  background-size:contain;
+  background-position: 50% -10%;
+  margin: 0 auto 0;
+  height:800px;
+  width: 100%;
+}

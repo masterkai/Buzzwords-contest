@@ -1,0 +1,36 @@
+body {
+  background-color: $mainColor;
+}
+h2 {
+  margin-bottom: 0.625em;
+  @include breakpoint(700px, $no-query:true){
+    font-size: 150%;
+  }
+}
+li {
+  margin-bottom: 0.625em;
+  margin-top: 0;
+}
+a {
+  text-decoration: none;
+  &:hover,&:active,&:visited,,&:focus {
+    text-decoration: none;
+  }
+}
+.line {
+  border-bottom: 1px solid #dbdbdb;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.strong {
+  font-weight: 700;
+}
+.orange {
+  color: $orange;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
