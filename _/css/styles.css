@@ -131,45 +131,49 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 20px; }
 
 /* line 1, ../components/sass/_globe.scss */
+h1, h2, h3, h4, h5, p, a {
+  font-family: 'Noto Sans TC', sans-serif; }
+
+/* line 4, ../components/sass/_globe.scss */
 body {
   background-color: #87ADBA; }
 
-/* line 4, ../components/sass/_globe.scss */
+/* line 7, ../components/sass/_globe.scss */
 h2 {
   margin-bottom: 0.625em; }
   @media (min-width: 700px) {
-    /* line 4, ../components/sass/_globe.scss */
+    /* line 7, ../components/sass/_globe.scss */
     h2 {
       font-size: 150%; } }
 
-/* line 10, ../components/sass/_globe.scss */
+/* line 13, ../components/sass/_globe.scss */
 li {
   margin-bottom: 0.625em;
   margin-top: 0; }
 
-/* line 14, ../components/sass/_globe.scss */
+/* line 17, ../components/sass/_globe.scss */
 a {
   text-decoration: none; }
-  /* line 16, ../components/sass/_globe.scss */
+  /* line 19, ../components/sass/_globe.scss */
   a:hover, a:active, a:visited, a:focus {
     text-decoration: none; }
 
-/* line 20, ../components/sass/_globe.scss */
+/* line 23, ../components/sass/_globe.scss */
 .line {
   border-bottom: 1px solid #dbdbdb;
   width: 100%;
   margin-left: auto;
   margin-right: auto; }
 
-/* line 26, ../components/sass/_globe.scss */
+/* line 29, ../components/sass/_globe.scss */
 .strong {
   font-weight: 700; }
 
-/* line 29, ../components/sass/_globe.scss */
+/* line 32, ../components/sass/_globe.scss */
 .orange {
   color: #cf4000; }
 
-/* line 33, ../components/sass/_globe.scss */
+/* line 36, ../components/sass/_globe.scss */
 img {
   display: block;
   max-width: 100%; }
@@ -220,7 +224,7 @@ img {
   max-width: 50em; }
 
 /* line 1, ../components/sass/_btn.scss */
-.btn {
+.btn, btn[data-status='1'] {
   background: #99B7C2;
   border-bottom: 4px solid rgba(0, 0, 0, 0.1);
   border-radius: 40px;
@@ -250,12 +254,12 @@ img {
   color: #fff; }
 
 /* line 27, ../components/sass/_btn.scss */
-.btn[disabled] {
+.btn[data-status='0'] {
   opacity: 0.4; }
 
 /* line 30, ../components/sass/_btn.scss */
-.btn[disabled]:active, .btn[disabled]:focus, .btn[disabled]:hover {
-  background: #496c79;
+.btn[data-status]:active, .btn[data-status]:focus, .btn[data-status]:hover {
+  background: #79a0af;
   color: #fff;
   cursor: pointer; }
 

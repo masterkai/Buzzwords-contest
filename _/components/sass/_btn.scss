@@ -1,4 +1,4 @@
-.btn {
+.btn,btn[data-status='1'] {
   background: $btn;
   border-bottom: 4px solid rgba(0, 0, 0, 0.1);
   border-radius: 40px;
@@ -24,11 +24,11 @@
   background: #c4217b;
   color: #fff;
 }
-.btn[disabled] {
+.btn[data-status='0'] {
   opacity: 0.4;
 }
-.btn[disabled]:active, .btn[disabled]:focus, .btn[disabled]:hover {
-  background: darken($btn,30%);
+.btn[data-status]:active, .btn[data-status]:focus, .btn[data-status]:hover {
+  background: darken($btn,10%);
   color: #fff;
   cursor: pointer;
 }
