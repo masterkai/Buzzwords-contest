@@ -15,8 +15,6 @@ btnNxt.onclick = function () {
 if($('#btnNxt').attr('data-status')==1){
     buildQuiz(page+1);
 }
-
-
     $('#btnNxt').attr('data-status', 0);
 };
 
@@ -44,37 +42,78 @@ function hideShow() {
 function buildQuiz(pg) {
     console.log(page);
     console.log(myObj.length);
+
     page = pg;
     hideShow();
     if(page >= 0){
-        var myQuestion = myObj[page].question;
-        var myCorrect = myObj[page].correct;
-        correctAnswer = myObj[page].answer[myCorrect];
-        var questionHolder = '';
-        var yesCor = '';
-        for(var i in myObj[page].answer){
-            var aClass = '';
-            if(myObj[page].mySel==i){
-                aClass = 'is-selected';
-            }
-            if(i == myCorrect){
-                yesCor = '*';
-            }else {
-                yesCor = '';
-            }
-            questionHolder+='<li class="answer"><a href="#" class="answer-link '+aClass+'" data-id="'+ parseInt(i) +'">'+myObj[page].answer[i]+' </a></li>';
-        }
-        output.innerHTML = '<h2>'+myQuestion+' ?</h2>';
-        output.innerHTML += '<ul class="has-answer">'+questionHolder+'</ul>';
-        console.log(myObj[page].question);
 
-        for (var x =0; x< bAnswer.length; x++){
-            bAnswer[x].addEventListener('click', myAnswer, false);
+        //If quiz is completed
+        if(myObj.length < (page+1)){
+            page=myObj.length;
+            console.log('Completed');
+            var holderHTML = '';
+            var score = 0;
+            var questions = '網紅：,意見領袖：,引戰文：,原PO：,鄉民：'.split(',');
+            var ansStatus = '';
+            var myFinalResult='';
+            var btnFinalStatus='';
+            var imgFinalstatus='';
+            var correctAnswerStatus;
+            for (var item in myObj){
+                console.log('questions:'+questions[item]);
+                console.log('myObj[item]'+myObj[item].correct);
+                console.log('myQueRep[item]'+myQueRep[item]);
+                if(myObj[item].correct == myQueRep[item]){
+                    score++;
+                    ansStatus = 'answerCorrect';
+                } else {
+                    ansStatus = 'answerWrong';
+                }
+                if(score==5){
+                    myFinalResult = '恭喜過關!!';
+                    btnFinalStatus = '100分獎勵領取';
+                    imgFinalstatus = 'Treasure-Open';
+                    correctAnswerStatus = myObj[item].answer[myQueRep[item]];
+                } else {
+                    myFinalResult = '闖關失敗';
+                    btnFinalStatus = '再接再厲好禮領取';
+                    imgFinalstatus = 'Treasure-UnOpen';
+                    correctAnswerStatus = myObj[item].answer[0];
+                }
+                holderHTML += '<div class="col-sm-12 finalResult__answer">'+ questions[item] + '<span class="'+ansStatus+'">'+ correctAnswerStatus +'</span></div>';
+            }
+            output.innerHTML = '<h1 class="finalResult__status">'+myFinalResult+'</h1><div class="finalResult"><div class="finalResult__flexitem">' +holderHTML+ '<img src="images/prize.png" class="responsive-img"></div><div class="finalResult__flexitem"><img class="responsive-img" src="images/'+imgFinalstatus+'.svg"></div></div>' +
+                '<div class="tac tal--m align-center"><a class="btn" href="#" style="letter-spacing: 5px;font-size: 1.48rem;width: 100%;padding:0;">'+btnFinalStatus+'</a></div>';
+
+        }else {
+
+            var myQuestion = myObj[page].question;
+            var myCorrect = myObj[page].correct;
+            correctAnswer = myObj[page].answer[myCorrect];
+            var questionHolder = '';
+            var yesCor = '';
+            for(var i in myObj[page].answer){
+                var aClass = '';
+                if(myObj[page].mySel==i){
+                    aClass = 'is-selected';
+                }
+                if(i == myCorrect){
+                    yesCor = '*';
+                }else {
+                    yesCor = '';
+                }
+                questionHolder+='<li class="answer"><a href="#" class="answer-link '+aClass+'" data-id="'+ parseInt(i) +'">'+myObj[page].answer[i]+' </a></li>';
+            }
+            output.innerHTML = '<h2>'+myQuestion+' ?</h2>';
+            output.innerHTML += '<ul class="has-answer">'+questionHolder+'</ul>';
+            console.log(myObj[page].question);
+
+            for (var x =0; x< bAnswer.length; x++){
+                bAnswer[x].addEventListener('click', myAnswer, false);
+            }
+            console.log(bAnswer);
         }
-        console.log(bAnswer);
     }
-
-
 }
 
 function myAnswer(e) {
@@ -94,9 +133,7 @@ function myAnswer(e) {
         myResult = 'incorrect';
     }
     console.log(myResult);
-    for(var q=0; q<output.children.length;q++){
-        console.log(output.children[q].children);
-    }
+
     myQueRep[page] = iId;
     // for(var x =0; x <bAnswer.length; x++){
     //     if(iId=x){
@@ -107,3 +144,6 @@ function myAnswer(e) {
     // }
     console.log(myQueRep);
 }
+/*for(var q=0; q<output.children.length;q++){
+ console.log(output.children[q].children);
+ }*/

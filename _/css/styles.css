@@ -130,54 +130,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transform: translateY(-50%);
   width: 20px; }
 
-/* line 1, ../components/sass/_globe.scss */
-h1, h2, h3, h4, h5, p, a {
-  font-family: 'Noto Sans TC', sans-serif; }
-
-/* line 4, ../components/sass/_globe.scss */
-body {
-  background-color: #87ADBA; }
-
-/* line 7, ../components/sass/_globe.scss */
-h2 {
-  margin-bottom: 0.625em; }
-  @media (min-width: 700px) {
-    /* line 7, ../components/sass/_globe.scss */
-    h2 {
-      font-size: 150%; } }
-
-/* line 13, ../components/sass/_globe.scss */
-li {
-  margin-bottom: 0.625em;
-  margin-top: 0; }
-
-/* line 17, ../components/sass/_globe.scss */
-a {
-  text-decoration: none; }
-  /* line 19, ../components/sass/_globe.scss */
-  a:hover, a:active, a:visited, a:focus {
-    text-decoration: none; }
-
-/* line 23, ../components/sass/_globe.scss */
-.line {
-  border-bottom: 1px solid #dbdbdb;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto; }
-
-/* line 29, ../components/sass/_globe.scss */
-.strong {
-  font-weight: 700; }
-
-/* line 32, ../components/sass/_globe.scss */
-.orange {
-  color: #cf4000; }
-
-/* line 36, ../components/sass/_globe.scss */
-img {
-  display: block;
-  max-width: 100%; }
-
 /* line 1, ../components/sass/_bg.scss */
 .bg {
   background-image: url(bg.svg);
@@ -417,3 +369,91 @@ img {
 .brand--bottom {
   -webkit-transition: opacity .3s;
   transition: opacity .3s; }
+
+/* line 1, ../components/sass/_finalResults.scss */
+.finalResult {
+  font-family: "Microsoft YaHei",'Noto Sans TC', sans-serif;
+  font-size: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 20px; }
+  /* line 9, ../components/sass/_finalResults.scss */
+  .finalResult__flexitem {
+    flex-basis: 50%; }
+    @media (max-width: 600px) {
+      /* line 9, ../components/sass/_finalResults.scss */
+      .finalResult__flexitem {
+        flex-basis: 100%; } }
+  /* line 15, ../components/sass/_finalResults.scss */
+  .finalResult__status {
+    font-size: 1.45rem;
+    font-weight: 700;
+    padding-bottom: 20px;
+    letter-spacing: 5px; }
+  /* line 21, ../components/sass/_finalResults.scss */
+  .finalResult__answer {
+    padding-bottom: 15px;
+    padding-left: 0;
+    padding-right: 0; }
+
+/* line 27, ../components/sass/_finalResults.scss */
+.answerCorrect {
+  color: #0070AD; }
+
+/* line 30, ../components/sass/_finalResults.scss */
+.answerWrong {
+  color: #E60012; }
+
+/* line 1, ../components/sass/_globe.scss */
+h1, h2, h3, h4, h5, p, a {
+  font-family: "Microsoft YaHei",'Noto Sans TC', sans-serif; }
+
+/* line 4, ../components/sass/_globe.scss */
+body {
+  background-color: #87ADBA; }
+
+/* line 7, ../components/sass/_globe.scss */
+h2 {
+  margin-bottom: 0.625em; }
+  @media (min-width: 700px) {
+    /* line 7, ../components/sass/_globe.scss */
+    h2 {
+      font-size: 150%; } }
+
+/* line 13, ../components/sass/_globe.scss */
+li {
+  margin-bottom: 0.625em;
+  margin-top: 0; }
+
+/* line 17, ../components/sass/_globe.scss */
+a {
+  text-decoration: none; }
+  /* line 19, ../components/sass/_globe.scss */
+  a:hover, a:active, a:visited, a:focus {
+    text-decoration: none; }
+
+/* line 23, ../components/sass/_globe.scss */
+.line {
+  border-bottom: 1px solid #dbdbdb;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+
+/* line 29, ../components/sass/_globe.scss */
+.strong {
+  font-weight: 700; }
+
+/* line 32, ../components/sass/_globe.scss */
+.orange {
+  color: #cf4000; }
+
+/* line 36, ../components/sass/_globe.scss */
+img {
+  display: block;
+  max-width: 100%; }
+
+/* line 40, ../components/sass/_globe.scss */
+.align-center {
+  text-align: center; }

@@ -1,0 +1,32 @@
+.finalResult {
+  font-family: "Microsoft YaHei",'Noto Sans TC', sans-serif;
+  font-size: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom:20px;
+  &__flexitem{
+    flex-basis: 50%;
+    @media (max-width: 600px) {
+      flex-basis: 100%;
+    }
+  }
+  &__status {
+    font-size: 1.45rem;
+    font-weight: 700;
+    padding-bottom:20px;
+    letter-spacing: 5px;
+  }
+  &__answer {
+    padding-bottom:15px;
+    padding-left:0;
+    padding-right:0;
+  }
+}
+.answerCorrect {
+  color:#0070AD;
+}
+.answerWrong {
+  color:#E60012;
+}

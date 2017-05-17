@@ -1,5 +1,5 @@
 h1, h2, h3, h4, h5, p,a {
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: "Microsoft YaHei",'Noto Sans TC', sans-serif;
 }
 body {
   background-color: $mainColor;
@@ -36,4 +36,7 @@ a {
 img {
   display: block;
   max-width: 100%;
+}
+.align-center {
+  text-align: center;
 }
