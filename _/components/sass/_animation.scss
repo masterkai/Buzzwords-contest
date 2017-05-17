@@ -1,4 +1,15 @@
 /*Global Animations*/
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
@@ -194,6 +205,11 @@
 .character {
   -webkit-animation: fadeIn .5s both, tada 1s;
   animation: fadeIn .5s both, tada 1s;
+}
+
+.slideInDown {
+  -webkit-animation: slideInDown .5s;
+  animation: slideInDown .5s;
 }
 
 .character-description {

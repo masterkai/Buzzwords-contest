@@ -216,6 +216,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   cursor: pointer; }
 
 /*Global Animations*/
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible; }
+  to {
+    transform: translate3d(0, 0, 0); } }
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
@@ -319,29 +325,29 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1); } }
 /*Logo Animations*/
-/* line 160, ../components/sass/_animation.scss */
+/* line 171, ../components/sass/_animation.scss */
 .index .brand--top {
   -webkit-animation: fadeIn .5s, slideDown .5s;
   animation: fadeIn .5s, slideDown .5s; }
 
-/* line 165, ../components/sass/_animation.scss */
+/* line 176, ../components/sass/_animation.scss */
 .index .main {
   -webkit-animation: slideUp .75s;
   animation: slideUp .75s; }
 
 /*Button Animations*/
-/* line 172, ../components/sass/_animation.scss */
+/* line 183, ../components/sass/_animation.scss */
 .btn {
   -webkit-transition: all .3s;
   transition: all .3s; }
 
 /*Quiz Page Animations*/
-/* line 179, ../components/sass/_animation.scss */
+/* line 190, ../components/sass/_animation.scss */
 .answer-link {
   -webkit-transition: all .5s;
   transition: all .5s; }
 
-/* line 184, ../components/sass/_animation.scss */
+/* line 195, ../components/sass/_animation.scss */
 .answer-link.is-selected {
   -webkit-transition: -webkit-transform .3s;
   transition: transform .3s;
@@ -350,22 +356,27 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transform: scale(1.025); }
 
 /*Results Page*/
-/* line 194, ../components/sass/_animation.scss */
+/* line 205, ../components/sass/_animation.scss */
 .character {
   -webkit-animation: fadeIn .5s both, tada 1s;
   animation: fadeIn .5s both, tada 1s; }
 
-/* line 199, ../components/sass/_animation.scss */
+/* line 210, ../components/sass/_animation.scss */
+.slideInDown {
+  -webkit-animation: slideInDown .5s;
+  animation: slideInDown .5s; }
+
+/* line 215, ../components/sass/_animation.scss */
 .character-description {
   -webkit-animation: fadeIn 1s .5s both;
   animation: fadeIn 1s .5s both; }
 
-/* line 204, ../components/sass/_animation.scss */
+/* line 220, ../components/sass/_animation.scss */
 .share {
   -webkit-animation: zoomIn .5s 1s both;
   animation: zoomIn .5s 1s both; }
 
-/* line 209, ../components/sass/_animation.scss */
+/* line 225, ../components/sass/_animation.scss */
 .brand--bottom {
   -webkit-transition: opacity .3s;
   transition: opacity .3s; }

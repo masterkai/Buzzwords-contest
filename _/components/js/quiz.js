@@ -18,7 +18,6 @@ if($('#btnNxt').attr('data-status')==1){
     $('#btnNxt').attr('data-status', 0);
 };
 
-
 function loadQuestion() {
     var a = new XMLHttpRequest();
     a.open('GET',quizData,true);
@@ -59,6 +58,7 @@ function buildQuiz(pg) {
             var btnFinalStatus='';
             var imgFinalstatus='';
             var correctAnswerStatus;
+            var character = '';
             for (var item in myObj){
                 console.log('questions:'+questions[item]);
                 console.log('myObj[item]'+myObj[item].correct);
@@ -74,17 +74,21 @@ function buildQuiz(pg) {
                     btnFinalStatus = '100分獎勵領取';
                     imgFinalstatus = 'Treasure-Open';
                     correctAnswerStatus = myObj[item].answer[myQueRep[item]];
+                    character = 'character';
                 } else {
                     myFinalResult = '闖關失敗';
                     btnFinalStatus = '再接再厲好禮領取';
                     imgFinalstatus = 'Treasure-UnOpen';
                     correctAnswerStatus = myObj[item].answer[0];
+                    character = 'slideInDown';
                 }
                 holderHTML += '<div class="col-sm-12 finalResult__answer">'+ questions[item] + '<span class="'+ansStatus+'">'+ correctAnswerStatus +'</span></div>';
             }
-            output.innerHTML = '<h1 class="finalResult__status">'+myFinalResult+'</h1><div class="finalResult"><div class="finalResult__flexitem">' +holderHTML+ '<img src="images/prize.png" class="responsive-img"></div><div class="finalResult__flexitem"><img class="responsive-img" src="images/'+imgFinalstatus+'.svg"></div></div>' +
-                '<div class="tac tal--m align-center"><a class="btn" href="#" style="letter-spacing: 5px;font-size: 1.48rem;width: 100%;padding:0;">'+btnFinalStatus+'</a></div>';
-
+            output.innerHTML = '<h1 class="finalResult__status">'+myFinalResult+'</h1><div class="finalResult"><div class="finalResult__flexitem">' +holderHTML+ '<img src="images/prize.png" class="responsive-img"></div><div class="finalResult__flexitem"><img class="responsive-img '+character+'" src="images/'+imgFinalstatus+'.svg"></div></div>' +
+                '<div class="tac tal--m align-center"><a id="goToForm" class="btn" href="#" style="letter-spacing: 5px;font-size: 1.48rem;width: 100%;padding:0;">'+btnFinalStatus+'</a></div>';
+            goToForm.onclick = function () {
+                buildForm();
+            }
         }else {
 
             var myQuestion = myObj[page].question;
@@ -114,6 +118,13 @@ function buildQuiz(pg) {
             console.log(bAnswer);
         }
     }
+}
+
+// build form Button click event
+var form = '';
+function buildForm() {
+    console.log('build form');
+    output.innerHTML = form;
 }
 
 function myAnswer(e) {
