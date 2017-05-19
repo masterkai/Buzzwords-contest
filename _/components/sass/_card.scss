@@ -45,6 +45,9 @@
   .answer-link {
     font-size: 100%;
   }
+  .learnPoint {
+    font-size: 100%;
+  }
 }
 .answer-link:active, .answer-link:focus, .answer-link:hover, .answer-link.is-selected {
   border-color: $btn;
@@ -66,4 +69,72 @@
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   width: 20px;
+}
+
+.learnPoint {
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  color: #333;
+  display: block;
+  font-size: 90%;
+  padding: 0.625em;
+  padding-left: 2.5em;
+  position: relative;
+
+}
+
+.learnPoint::before {
+  background: #fff;
+  border-radius: 50%;
+  font-family: FontAwesome;
+  content: "\f0a4";
+  display: inline-block;
+  vertical-align: middle;
+  //display: block;
+  //height: 20px;
+  //width: 20px;
+  left: 0.625em;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.learnPoint:active, .learnPoint:focus, .learnPoint:hover, .learnPoint.is-selected {
+  border-color: $btn;
+  color: #333;
+}
+.learnPoint.is-selected::before {
+  background: $btn;
+  color: #333;
+}
+
+.learnPoint {
+  transition: all .4s;
+  overflow: hidden;
+  height:50px;
+}
+span.content {
+  display: block;
+  width: 100%;
+  transition: all .3s;
+}
+.learnPoint .content {
+  position: absolute;
+  transition: top .3s;
+}
+.top.content {
+  position: relative;
+  top:0px;
+}
+.bottom.content {
+  position: relative;
+  top:-70px;
+}
+.learnPoint:hover .top{
+  top:50px;
+}
+.learnPoint:hover .bottom{
+  top:-35px;
+  color: #0070AD;
 }

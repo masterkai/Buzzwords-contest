@@ -1,6 +1,6 @@
 var quizData = 'https://api.myjson.com/bins/v3b3d';
 //https://api.myjson.com/bins/v3b3d
-
+var instruction = document.getElementById('instruction');
 var output = document.getElementById('output');
 var bAnswer = document.getElementsByClassName('answer-link');
 var myObj='',
@@ -84,6 +84,7 @@ function buildQuiz(pg) {
                 }
                 holderHTML += '<div class="col-sm-12 finalResult__answer">'+ questions[item] + '<span class="'+ansStatus+'">'+ correctAnswerStatus +'</span></div>';
             }
+            $('#instruction').css('display', 'none');
             output.innerHTML = '<h1 class="finalResult__status">'+myFinalResult+'</h1><div class="finalResult"><div class="finalResult__flexitem">' +holderHTML+ '<img src="images/prize.png" class="responsive-img"></div><div class="finalResult__flexitem"><img class="responsive-img '+character+'" src="images/'+imgFinalstatus+'.svg"></div></div>' +
                 '<div class="tac tal--m align-center"><a id="goToForm" class="btn" href="#" style="letter-spacing: 5px;font-size: 1.48rem;width: 100%;padding:0;">'+btnFinalStatus+'</a></div>';
             goToForm.onclick = function () {
@@ -108,6 +109,7 @@ function buildQuiz(pg) {
                 }
                 questionHolder+='<li class="answer"><a href="#" class="answer-link '+aClass+'" data-id="'+ parseInt(i) +'">'+myObj[page].answer[i]+' </a></li>';
             }
+            instruction.innerHTML = '「依照題目，選出正確的英文單字 」';
             output.innerHTML = '<h2>'+myQuestion+' ?</h2>';
             output.innerHTML += '<ul class="has-answer">'+questionHolder+'</ul>';
             console.log(myObj[page].question);
@@ -121,10 +123,11 @@ function buildQuiz(pg) {
 }
 
 // build form Button click event
-var form = '';
+
 function buildForm() {
     console.log('build form');
-    output.innerHTML = form;
+    $('#instruction').css('display', 'none');
+    output.innerHTML = '<iframe class="iframeHeight" src="form.html" scrolling="yes" style="width:100%;"></iframe>';
 }
 
 function myAnswer(e) {
@@ -155,6 +158,3 @@ function myAnswer(e) {
     // }
     console.log(myQueRep);
 }
-/*for(var q=0; q<output.children.length;q++){
- console.log(output.children[q].children);
- }*/
